@@ -1,8 +1,8 @@
 galaxy_info:
-  author: DMITRII VLADIMIROV
-  description: This role install Vector  
-  company: Netology
-
+  author: Stanislav Gurniak
+  description: Role for installation and configuring Vector
+  role_name: vector
+  namespace: sgurniak
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker
@@ -16,7 +16,7 @@ galaxy_info:
   # - CC-BY-4.0
   license: MIT
 
-  min_ansible_version: 2.13
+  min_ansible_version: "2.13"
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -28,10 +28,14 @@ galaxy_info:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
   platforms:
-    - name: Centos
+    - name: EL
       versions:
-        - 7
-        - 8
+        - "7"
+    - name: Ubuntu
+      versions:
+        - "22.04"
+
+  #   - 25
   # - name: SomePlatform
   #   versions:
   #   - all

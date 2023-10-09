@@ -1,6 +1,7 @@
 ---
-# defaults file for vector-role
-vector_version: "0.25.1"
+# defaults file for vector
+# url for connection to the clickhouse server
+clickhouse_source: http://192.168.150.9:8123
 
 # Vector configuration
 vector_config:
@@ -15,11 +16,13 @@ vector_config:
     to_clickhouse:
       type: clickhouse
       inputs:
-        # we take 'sample_file' from 'sources' above
+        # 'sample_file' from 'sources' above
         - sample_file
       database: logs
-      endpoint: http://10.1.2.8:8123
+      # clickhouse URL
+      endpoint: "{{ clickhouse_source }}"
       table: vector_logs
+      # example of user with plain-defined password in clickhouse DBMS
       auth:
         strategy: basic
         user: vector
