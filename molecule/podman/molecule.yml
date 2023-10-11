@@ -5,7 +5,7 @@ driver:
   name: podman
 platforms:
   - name: fedora37
-    image: quay.io/fedora/fedora:37
+    image: quay.io/fedora/python-311
     pre_build_image: true
 provisioner:
   name: ansible
